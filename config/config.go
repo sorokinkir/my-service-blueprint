@@ -8,8 +8,14 @@ import (
 
 // Config struct for api rest service
 type Config struct {
-	Host string `yaml:"host"`
-	Port string `yaml:"port"`
+	Server struct {
+		Host string `yaml:"host"`
+		Port string `yaml:"port"`
+	} `yaml: "server"`
+	Database struct {
+		Username string `yaml:"user"`
+		Password string `yaml:"password"`
+	} `yaml: "database"`
 }
 
 // NewConfig returns a new decoded Config struct
